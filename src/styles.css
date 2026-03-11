@@ -25,6 +25,16 @@ select {
   margin-bottom: 24px;
 }
 
+.course-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .hero h1 {
   margin: 0 0 8px;
   font-size: 32px;
@@ -44,7 +54,13 @@ select {
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 24px;
+}
+
+.single-column {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
@@ -108,7 +124,7 @@ button {
 }
 
 button:hover {
-  opacity: 0.92;
+  opacity: 0.94;
 }
 
 button.danger {
@@ -122,15 +138,32 @@ label {
   font-weight: 600;
 }
 
+.tab-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: white;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.tab.active {
+  background: #111827;
+  color: white;
+}
+
 .toolbar {
   display: grid;
-  grid-template-columns: 1fr 160px;
   gap: 12px;
   margin-bottom: 16px;
 }
 
 .student-list {
-  max-height: 420px;
+  max-height: 480px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -147,6 +180,26 @@ label {
 .student-item.active {
   border: 2px solid #111827;
   background: #eef2ff;
+}
+
+.student-admin-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.student-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
 }
 
 .subtext {
@@ -203,6 +256,11 @@ label {
   margin-bottom: 4px;
 }
 
+.big-number {
+  font-size: 28px;
+  font-weight: 700;
+}
+
 .quiz-list {
   display: flex;
   flex-direction: column;
@@ -220,6 +278,26 @@ label {
   border: 1px solid #e5e7eb;
 }
 
+.analytics-summary {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.analytics-box {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.hint-text {
+  margin: 10px 0 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
 @media (max-width: 1000px) {
   .summary-grid {
     grid-template-columns: 1fr 1fr;
@@ -228,14 +306,14 @@ label {
   .layout {
     grid-template-columns: 1fr;
   }
+
+  .analytics-summary {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
-  .summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .toolbar,
+  .summary-grid,
   .result-grid {
     grid-template-columns: 1fr;
   }
