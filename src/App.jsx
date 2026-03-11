@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { students } from "./students.js";
 
 const STORAGE_KEY = "quiz-site-data-v1";
