@@ -417,50 +417,37 @@ export default function App() {
             </div>
 
             <div className="card">
-              <h2>Add / Delete Student</h2>
-              <div className="form-grid">
-                <input
-                  placeholder="Student name"
-                  value={newStudentName}
-                  onChange={(e) => setNewStudentName(e.target.value)}
-                />
-                <input
-                  placeholder="Student ID"
-                  value={newStudentId}
-                  onChange={(e) => setNewStudentId(e.target.value)}
-                />
-                <input
-                  placeholder="Department"
-                  value={newStudentDepartment}
-                  onChange={(e) => setNewStudentDepartment(e.target.value)}
-                />
-                <select
-                  value={newStudentSection}
-                  onChange={(e) => setNewStudentSection(e.target.value)}
-                >
-                  <option value="CS.40711">CS.40711</option>
-                  <option value="BTM.40047">BTM.40047</option>
-                </select>
-                <button onClick={addStudent}>Add Student</button>
-              </div>
+  <h2>Add / Delete Student</h2>
+  <div className="form-grid">
+    <input
+      placeholder="Student name"
+      value={newStudentName}
+      onChange={(e) => setNewStudentName(e.target.value)}
+    />
+    <input
+      placeholder="Student ID"
+      value={newStudentId}
+      onChange={(e) => setNewStudentId(e.target.value)}
+    />
+    <input
+      placeholder="Department"
+      value={newStudentDepartment}
+      onChange={(e) => setNewStudentDepartment(e.target.value)}
+    />
+    <select
+      value={newStudentSection}
+      onChange={(e) => setNewStudentSection(e.target.value)}
+    >
+      <option value="CS.40711">CS.40711</option>
+      <option value="BTM.40047">BTM.40047</option>
+    </select>
+    <button onClick={addStudent}>Add Student</button>
+  </div>
 
-              <div className="student-admin-list">
-                {students.map((student) => (
-                  <div className="student-admin-item" key={student.studentId}>
-                    <div>
-                      <strong>{student.name}</strong>
-                      <div className="subtext">
-                        {student.studentId} · {student.section} · {student.department}
-                      </div>
-                    </div>
-                    <button className="danger" onClick={() => deleteStudent(student.studentId)}>
-                      Delete
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+  <div className="hint-text">
+    To delete a student, search the student in the Student Lookup tab and I can help you add a dedicated delete search box next.
+  </div>
+</div>
 
           <div className="right-column">
             <div className="card">
